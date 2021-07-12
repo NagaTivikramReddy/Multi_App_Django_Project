@@ -25,5 +25,21 @@ class CustomRegister(CreateView):
     form_class = UserCreationForm
     redirect_authenticated_user = True
     success_url = reverse_lazy('index')
+    
+    def form_valid(self, form):
+
+        user = form.save()  # To create a user
+
+        # To auto login as soon as when registration completes
+        if user is not None:
+            login(self.request, user)
+
+        return super(CustomRegister, self).form_valid(form)
+
+     # To Redirect to index page when user tries to register while he is already logged in
+    def get(self, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            return redirect('index')
+        return super(CustomRegister, self).get(*args, **kwargs)
 
     
