@@ -1,0 +1,46 @@
+{% extends 'allinone_base/base.html' %}
+
+{% block content %}
+
+<center>
+    <div>
+    <h2>Welcome to All in One App</h2>
+</div>
+<br>
+<br>
+<div class="container">
+    <a href="{% url 'unitconvertor:home'%}">
+        <div class="card bg-info">
+            <div class="card-body text-center apps">
+                <p class="card-text">Unit Convetsion</p>
+            </div>
+        </div>
+    </a>
+<br>
+    <a href="{% url 'weather:home'%}">
+        <div class="card bg-info">
+            <div class="card-body text-center apps">
+                <p class="card-text">Weather</p>
+            </div>
+        </div>
+    </a>
+
+<br>
+    <a href="{% url 'todolist:tasklist' %}">
+        <div class="card bg-info">
+            <div class="card-body text-center apps">
+                <p class="card-text">To Do list</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+
+   
+
+    
+
+</center>
+
+
+{% endblock content %}

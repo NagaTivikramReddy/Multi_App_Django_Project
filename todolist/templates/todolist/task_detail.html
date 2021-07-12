@@ -1,0 +1,14 @@
+{% extends 'todolist/todolist_base.html' %}
+
+{% block content %}
+<h2>Task Details</h2>
+<br>
+
+    <div class="col-md-8" style="background-color: rgb(187, 184, 184);">
+        <h3>Title</h3>
+        <h4>{{task.title}}</h4>
+<br>
+        <h3>Description</h3>
+        <h5>{{task.description}}</h3>
+    </div>
+{% endblock %}

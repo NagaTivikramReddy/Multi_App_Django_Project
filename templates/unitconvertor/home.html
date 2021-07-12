@@ -1,0 +1,52 @@
+{% extends 'allinone_base/base.html' %}
+
+{% block content %}
+<div style="padding: 20px;background-color: rgb(188, 240, 240);" class="card">
+
+<h3>Welcome to Unit Convesion</h3>
+<br>
+<h5>Please select the currency types</h5>
+<br>
+
+<form action="{% url 'unitconvertor:convert'%}">
+    <div class="form-group">
+    <div class="row">
+        <div class="col-md-4">
+            <label for="amount">Amount</label><br>
+            <input class="form-control" type="number" name="amount" min="1" value="1" id="">
+        </div>
+
+        <div class="col-md-4">
+            <label for="fromcountries">From</label><br>
+            <select class="form-control" name="fromcountries" id="">
+                <option value="inr">India(INR) </option>
+                <option value="usd">USA(USD) </option>
+                <option value="eur">Europe(EUR) </option>
+                <option value="jpy">Japan(JPY) </option>
+                <option value="egp">Egypt(EGP) </option>
+                <option value="dinar">Kuwait(Dinar) </option>
+            </select>
+        </div>
+
+        <div class="col-mod-4">
+            <label for="tocountries">To</label><br>
+            <select class="form-control" name="tocountries" id="">
+                <option value="inr">India(INR) </option>
+                <option value="usd">USA(USD) </option>
+                <option value="eur">Europe(EUR) </option>
+                <option value="jpy">Japan(JPY) </option>
+                <option value="egp">Egypt(EGP) </option>
+                <option value="dinar">Kuwait(Dinar) </option>
+            </select>
+        </div>
+    </div>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Convert">
+</form>
+<br>
+
+<label for="result"><b><i>Result</i> </b> </label>
+<input class="form-control" readonly type="text" name="result" id="" value="{{amount}} {{from|upper}} {{equal}} {{result}} {{to|upper}}">
+</div>
+
+{% endblock content%}

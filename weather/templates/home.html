@@ -1,0 +1,56 @@
+{% extends 'allinone_base/base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+    <h2>Welcome to Weather info </h2>
+    <br>
+    
+    <p>Enter the place name to get the current weather details</p>
+    <br>
+    <form action="{%url 'weather:getweather' %}">
+        {% csrf_token %}
+        
+        <p><input type="text" name="place" required></p>
+        
+        <p>
+            <input class="btn btn-primary" type="submit" name="Submit">
+        </p>
+        
+    </form>
+    
+    {% if result.status == 'Success'%}
+        <div>
+            <p>
+                <table class="table">
+                    <thead>
+                    <tr>
+                    
+                    <th scope="col">Place</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Temperature</th>
+                    
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                        <tr>
+                        
+                        <td>{{result.place}}</td>
+                        <td>{{result.time}}</td>
+                        <td>{{result.temperature}}</td>
+                    
+                        </tr>
+                
+    
+                    </tbody>
+                </table>
+
+                <br>
+                <br>
+
+                
+            </p>
+        </div>
+
+    {%endif%}
+
+{% endblock %}

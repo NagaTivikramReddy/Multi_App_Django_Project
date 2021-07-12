@@ -1,0 +1,81 @@
+{% extends 'todolist/todolist_base.html' %}
+
+{% block content %}
+
+    <style>
+
+
+    .bottom{
+        
+        justify-content: space-between;
+        padding: 20px;
+    }
+    a{
+        color:white;
+    }
+   
+    </style>
+
+    <div style="background-color: rgb(187, 184, 184);" class="header-bar card">
+        <div class="top">
+            <h1>Hello {{request.user|title}}</h1>
+            <h4>You have <i>{{count}}</i> incomplete task{{count|pluralize}}</h4>
+        </div>
+    
+        <div class="bottom">
+    
+    <div>
+    <h6><a href="{% url 'todolist:task-create' %}">Create new Task</a></h6>
+    </div>
+    <br>
+
+    <div >
+    <form action="" method="GET">
+        
+        <input style="display:inline-flex" type="text" name="search_input" value="{{search_input}}">
+        <input   type="submit" value="Search" id="">
+        
+        <a href="{% url 'todolist:tasklist'%}">Reset</a>
+    
+    </form>
+</div>
+    <br>
+
+    
+
+    <div class="row">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Items</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for item in task_list %}
+
+        </tbody>
+        <tr>
+            {% if item.completed%}
+            
+            <td><a href="{% url 'todolist:task-update' item.pk %}"><s>{{item.title}}</s></a></td>   
+            {%else%}
+            <td><a href="{% url 'todolist:task-update' item.pk %}">{{item.title}}</a></td>
+            {%endif%}
+            <td><a href="{% url 'todolist:task-update' item.id%}">Edit</a></span></td>
+            
+            <td><a href="{% url 'todolist:task-delete' item.id %}">Delete</a></td>
+            
+        </tr>
+        {% empty %}
+            No items
+        
+        {% endfor %}
+    </table>
+</div>
+</div>
+</div>
+
+    
+{% endblock content %}

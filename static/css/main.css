@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  background-color: whitesmoke;
+  color: black;
+  overflow: scroll;
+}
+.navbarcontainer {
+  display: block;
+
+  z-index: 1;
+  top: 0;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: rgb(200, 81, 211);
+}
+
+.apps {
+  color: white;
+  font-weight: 400;
+}

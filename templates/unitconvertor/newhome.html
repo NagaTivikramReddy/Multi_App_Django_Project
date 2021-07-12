@@ -1,0 +1,15 @@
+<!-- <h4>{{data}}</h4> -->
+<h2>{{data.success}}</h2>
+
+{% if data.success %}
+<h3>Base(EUR) : {{data.rates.EUR}}</h3>
+
+<h3>Rates</h3>
+INR : {{data.rates.INR}}
+USD : {{data.rates.USD}}
+JPY : {{data.rates.JPY}}
+EGP : {{data.rates.EGP}}
+KWD : {{data.rates.KWD}}
+RUB : {{data.rates.RUB}}
+{%endif%}
+
