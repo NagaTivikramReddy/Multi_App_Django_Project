@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('unitconvertor', '0001_initial'),
+        ('currencyconvertor', '0001_initial'),
     ]
 
     operations = [

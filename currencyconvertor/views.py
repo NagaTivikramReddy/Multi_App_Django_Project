@@ -7,7 +7,7 @@ import requests
 
 
 def home(request):
-    return render(request, 'unitconvertor/home.html')
+    return render(request, 'currencyconvertor/home.html')
 
 
 def convert(request):
@@ -125,7 +125,7 @@ def convert(request):
 
     equal = '='
 
-    return render(request, 'unitconvertor/home.html', {'result': result, 'amount': amount, 'from': from1, 'to': to, 'equal': equal})
+    return render(request, 'currencyconvertor/home.html', {'result': result, 'amount': amount, 'from': from1, 'to': to, 'equal': equal})
 
 
 def newconvert(request):
@@ -149,6 +149,6 @@ def newconvert(request):
 
     equal = '='
 
-    # return render(request, 'unitconvertor/home.html', {'result': result, 'amount': amount, 'from': from1, 'to': to, 'equal': equal})
+    # return render(request, 'currencyconvertor/home.html', {'result': result, 'amount': amount, 'from': from1, 'to': to, 'equal': equal})
 
-    return render(request, 'unitconvertor/newhome.html')
+    return render(request, 'currencyconvertor/newhome.html')
